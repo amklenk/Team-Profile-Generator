@@ -1,4 +1,8 @@
 //this will have the template for the html file
+
+//move cards to generate for each role 
+//pass and filter
+
 module.exports = (templateData) => {
     // destructure page data by section
     // const { name, id, email, role, office, github, school } = templateData;
