@@ -27,6 +27,12 @@ test("get's manager's email and sets it as object's email", () => {
     expect(manager.getEmail()).toHaveProperty("email");
 })
 
+test("get's manager's office number and sets it as object's office", () => {
+    const manager = new Manager("Dave");
+    
+    expect(manager.getOffice()).toHaveProperty("office");
+})
+
 test("get's manager's role and sets it as object's role", () => {
     const manager = new Manager("Dave");
     
