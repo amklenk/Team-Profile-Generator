@@ -1,14 +1,69 @@
 //this will have the template for the html file
 
-//move cards to generate for each role 
 //pass and filter
+        //For Manager
+        //     return `
+        //     <div class="col-9-sm col-6-md col-lg-3 card shadow p-0 mb-5 bg-light rounded mx-4">
+        //         <div class="card-body px-0 py-0">
+        //             <div class="card-header header px-3">
+        //                 <h5 class="card-title font-weight-bold">Employee Name</h5>
+        //                 <h6 class="card-subtitle font-weight-bold"><span class = "icon mr-1"><i class="fa-solid fa-mug-hot"></i></span>Manager</h6>
+        //             </div>
+        //             <ul class="card-text list-group mt-2 px-3 py-3 list">
+        //                 <li id="ID list-group-item">ID: </li>
+        //                 <li id="email list-group-item">Email: </li>
+        //                 <li id="extra-info list-group-item">Office: </li>
+        //             </ul>
+        //         </div>
+        //     </div>
+        //     `
+            
+        //for Engineer
+        //    return `
+        //    <div class="col-9-sm col-6-md col-lg-3 card shadow p-0 mb-5 bg-light rounded mx-4">
+        //         <div class="card-body px-0 py-0">
+        //             <div class="card-header header px-3">
+        //                 <h5 class="card-title font-weight-bold">Employee Name</h5>
+        //                 <h6 class="card-subtitle font-weight-bold"><span class = "icon mr-1"><i class="fa-solid fa-glasses"></i></span>Engineer</h6>
+        //             </div>
+        //             <ul class="card-text list-group mt-2 px-3 py-3 list">
+        //                 <li id="ID list-group-item">ID: </li>
+        //                 <li id="email list-group-item">Email: </li>
+        //                 <li id="extra-info list-group-item">GitHub: </li>
+        //             </ul>
+        //         </div>
+        //     </div>
+        //    ` 
 
-module.exports = (templateData) => {
+        //for Intern
+        //    return `
+        //    <div class="col-9-sm col-6-md col-lg-3 card shadow p-0 mb-5 bg-light rounded mx-4">
+        //         <div class="card-body px-0 py-0">
+        //             <div class="card-header header px-3">
+        //                 <h5 class="card-title font-weight-bold">Employee Name</h5>
+        //                 <h6 class="card-subtitle font-weight-bold"><span class = "icon mr-1"><i class="fa-solid fa-graduation-cap"></i></span>Intern</h6>
+        //             </div>
+        //             <ul class="card-text list-group mt-2 px-3 py-3 list">
+        //                 <li id="ID list-group-item">ID: </li>
+        //                 <li id="email list-group-item">Email: </li>
+        //                 <li id="extra-info list-group-item">School: </li>
+        //             </ul>
+        //         </div>
+        //     </div>
+        //    ` 
+
+function generateCardsSection (name, id, email, role, office, github, school) {
+if (role === "Manager"){
+    return ``
+}
+};
+
+function generateHTML(templateData) {
     // destructure page data by section
-    // const { name, id, email, role, office, github, school } = templateData;
+    const { name, id, email, role, office, github, school } = templateData;
   
     return `
-    <!DOCTYPE html>
+<!DOCTYPE html>
     <html lang="en">
     <head>
       <meta charset="UTF-8">
@@ -28,50 +83,11 @@ module.exports = (templateData) => {
 
     <main class="container mt-5">
         <div class="row justify-content-center">
-            <!-- this will be dynamically generated -->
-            <div class="col-sm card shadow p-0 mb-5 bg-light rounded mx-5">
-                <div class="card-body px-0 py-0">
-                    <div class="card-header header px-3">
-                        <h5 class="card-title font-weight-bold">Employee Name</h5>
-                        <h6 class="card-subtitle font-weight-bold">Role<span class = "icon"></span></h6>
-                    </div>
-                    <ul class="card-text list-group mt-2 px-3 py-3 list">
-                        <li id="ID list-group-item">ID: </li>
-                        <li id="email list-group-item">Email: </li>
-                        <li id="extra-info list-group-item">Office/GitHub/School: </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="col-sm card shadow p-0 mb-5 bg-light rounded mx-5">
-                <div class="card-body px-0 py-0">
-                    <div class="card-header header px-3">
-                        <h5 class="card-title font-weight-bold">Employee Name</h5>
-                        <h6 class="card-subtitle font-weight-bold">Role<span class = "icon"></span></h6>
-                    </div>
-                    <ul class="card-text list-group mt-2 px-3 py-3 list">
-                        <li id="ID list-group-item">ID: </li>
-                        <li id="email list-group-item">Email: </li>
-                        <li id="extra-info list-group-item">Office/GitHub/School: </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="col-sm card shadow p-0 mb-5 bg-light rounded mx-5">
-                <div class="card-body px-0 py-0">
-                    <div class="card-header header px-3">
-                        <h5 class="card-title font-weight-bold">Employee Name</h5>
-                        <h6 class="card-subtitle font-weight-bold">Role<span class = "icon"></span></h6>
-                    </div>
-                    <ul class="card-text list-group mt-2 px-3 py-3 list">
-                        <li id="ID list-group-item">ID: </li>
-                        <li id="email list-group-item">Email: </li>
-                        <li id="extra-info list-group-item">Office/GitHub/School: </li>
-                    </ul>
-                </div>
-            </div>
+        CARDS GENERATED HERE
+        </div>
     </main>
     </html>
     `;
   };
-  
+
+  module.exports= generateHTML;
