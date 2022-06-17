@@ -200,8 +200,7 @@ inquirer.prompt(
   } else if (member === "Intern"){
     this.promptIntern();
   }  else {
-    return;
-    // return this.generateHTML;
+    generateHTML(this.team);
   }
 });
   }
@@ -228,13 +227,39 @@ buildTeam.prototype.promptIntern = function() {
 
 new buildTeam().promptManager();
 
+const writeFile = fileContent => {
+  return new Promise((resolve, reject) => {
+      fs.writeFile('./dist/index.html', fileContent, err=>{
+          //if there's an error, reject the Promise and send the error to the catch method
+          if (err){
+              reject(err);
+              return;
+          }
+          //if resolves, send successful data to then method
+          resolve({
+              ok: true,
+              message:"File created!"
+          });
+      });
+  });
+};
 
-// fs.writeToFile(){
+const copyFile=()=>{
+  return new Promise((resolve, reject)=>{
+      fs.copyFile('.src/styles.css', './dist/styles.css', err => {
+          //if there's an error, reject the Promise and send the error to the catch method
+          if (err){
+              reject(err);
+              return;
+          }
+          //if resolves, send successful data to then method
+          resolve({
+              ok: true,
+              message:"Stylesheet created!"
+          });
+      });
+  });
+};
 
-// }
-
-// fs.copyToFile(){
-
-// }
 
 
