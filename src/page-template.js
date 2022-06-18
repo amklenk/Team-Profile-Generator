@@ -22,14 +22,17 @@ let role = employee.getRole();
         console.log(engineerArray);
     }
 }
+return (managerArray, internArray, engineerArray);
 
 };
 
-function generateCardsSection (teamArray) {
+function generateCardsSection (managerArray, internArray, engineerArray) {
   //where is role!?
-if (role === "Manager"){
-  teamArray.filter(({ Manager }) => !"Manager").map(({ name, id, email, office}) => {
-          return `
+  console.log(managerArray);
+  console.log(internArray);
+  console.log(engineerArray);
+  for (var i = 0; i <managerArray.length; i++) {
+    return `
               <div class="col-9-sm col-6-md col-lg-3 card shadow p-0 mb-5 bg-light rounded mx-4">
                   <div class="card-body px-0 py-0">
                       <div class="card-header header px-3">
@@ -44,30 +47,10 @@ if (role === "Manager"){
                   </div>
               </div>
               `
-}).join("");
-} else if (role === "Engineer"){
-  teamArray.filter(({ role }) => !"Engineer").map(({ name, id, email, github}) => {
-  return `
-           <div class="col-9-sm col-6-md col-lg-3 card shadow p-0 mb-5 bg-light rounded mx-4">
-                <div class="card-body px-0 py-0">
-                    <div class="card-header header px-3">
-                        <h5 class="card-title font-weight-bold">${name}</h5>
-                        <h6 class="card-subtitle font-weight-bold"><span class = "icon mr-1"><i class="fa-solid fa-glasses"></i></span>Engineer</h6>
-                    </div>
-                    <ul class="card-text list-group mt-2 px-3 py-3 list">
-                        <li id="ID list-group-item">ID: ${id}</li>
-                        <li id="email list-group-item">Email: <a href="mailto:${email}">${email}</a></li>
-                        <li id="extra-info list-group-item">GitHub: <a href="https://github.com/${github}" target="_blank">${github}</a></li>
-                    </ul>
-                </div>
-            </div>
-           `
   }
 
-).join("");
-} else {
-  teamArray.filter(({ role }) => !"Intern").map(({ name, id, email, school}) => {
-  return `
+  for (var i = 0; i < internArray.length; i++){
+      return `
   <div class="col-9-sm col-6-md col-lg-3 card shadow p-0 mb-5 bg-light rounded mx-4">
        <div class="card-body px-0 py-0">
            <div class="card-header header px-3">
@@ -83,14 +66,28 @@ if (role === "Manager"){
    </div>
   `
   }
-).join("");
-};
+
+  for(var i = 0; i < engineerArray.length; i++) {
+      return `
+           <div class="col-9-sm col-6-md col-lg-3 card shadow p-0 mb-5 bg-light rounded mx-4">
+                <div class="card-body px-0 py-0">
+                    <div class="card-header header px-3">
+                        <h5 class="card-title font-weight-bold">${name}</h5>
+                        <h6 class="card-subtitle font-weight-bold"><span class = "icon mr-1"><i class="fa-solid fa-glasses"></i></span>Engineer</h6>
+                    </div>
+                    <ul class="card-text list-group mt-2 px-3 py-3 list">
+                        <li id="ID list-group-item">ID: ${id}</li>
+                        <li id="email list-group-item">Email: <a href="mailto:${email}">${email}</a></li>
+                        <li id="extra-info list-group-item">GitHub: <a href="https://github.com/${github}" target="_blank">${github}</a></li>
+                    </ul>
+                </div>
+            </div>
+           `
+  }
 }
 
-function generateHTML(templateData) {
-    // destructure page data by section
-    const { name, id, email, role, office, github, school } = templateData;
-  
+function generateHTML() {
+
     return `
 <!DOCTYPE html>
     <html lang="en">
@@ -112,7 +109,7 @@ function generateHTML(templateData) {
 
     <main class="container mt-5">
         <div class="row justify-content-center">
-        
+        ${generateCardsSection()}
         </div>
     </main>
     </html>
