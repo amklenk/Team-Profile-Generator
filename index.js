@@ -4,7 +4,7 @@ const fs = require("fs");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
-const generateHTML = require("./src/page-template");
+const {generateHTML, filterRoles} = require("./src/page-template");
 
 //questions arrays
 const managerQuestions = [
@@ -170,14 +170,14 @@ const internQuestions = [
       }
       }
 ];
-function buildTeam() {
+function myTeam() {
 this.team = [];
 this.manager;
 this.engineer;
 this.intern;
 }
 
-buildTeam.prototype.promptManager = function (){
+myTeam.prototype.promptManager = function (){
   inquirer.prompt (managerQuestions)
   .then(({name, id, email, office}) => {
     this.manager = new Manager(name, id, email, office);
@@ -186,7 +186,7 @@ buildTeam.prototype.promptManager = function (){
   })
 };
 
-buildTeam.prototype.promptTeamMember = function () {
+myTeam.prototype.promptTeamMember = function () {
 inquirer.prompt(
   {
     type: "list",
@@ -200,12 +200,17 @@ inquirer.prompt(
   } else if (member === "Intern"){
     this.promptIntern();
   }  else {
-    generateHTML(this.team);
+    filterRoles(this.team);
+    // writeFile(generateHTML(templateData));
+    // copyFile();
   }
+})
+.catch((err) => {
+  console.log(err);
 });
   }
 
-buildTeam.prototype.promptEngineer = function(){
+myTeam.prototype.promptEngineer = function(){
   inquirer.prompt (engineerQuestions)
   .then(({name, id, email, github}) => {
     this.engineer = new Engineer(name, id, email, github);
@@ -215,7 +220,7 @@ buildTeam.prototype.promptEngineer = function(){
   })
 };
 
-buildTeam.prototype.promptIntern = function() {
+myTeam.prototype.promptIntern = function() {
   inquirer.prompt(internQuestions)
   .then(
     ({name, id, email, school}) => {
@@ -225,11 +230,11 @@ buildTeam.prototype.promptIntern = function() {
     });
 }
 
-new buildTeam().promptManager();
+new myTeam().promptManager();
 
-const writeFile = fileContent => {
+const writeFile = pageHTML => {
   return new Promise((resolve, reject) => {
-      fs.writeFile('./dist/index.html', fileContent, err=>{
+      fs.writeFile('./dist/index.html', pageHTML, err=>{
           //if there's an error, reject the Promise and send the error to the catch method
           if (err){
               reject(err);
@@ -246,7 +251,7 @@ const writeFile = fileContent => {
 
 const copyFile=()=>{
   return new Promise((resolve, reject)=>{
-      fs.copyFile('.src/styles.css', './dist/styles.css', err => {
+      fs.copyFile('./src/styles.css', './dist/styles.css', err => {
           //if there's an error, reject the Promise and send the error to the catch method
           if (err){
               reject(err);

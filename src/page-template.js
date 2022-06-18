@@ -1,9 +1,34 @@
 //this will have the template for the html file 
+const manager = require("../lib/Manager");
+const engineer = require("../lib/Engineer");
+const intern = require("../lib/Intern");
+
+function filterRoles(teamArray){
+const managerArray = [];
+const internArray = [];
+const engineerArray = [];
+
+for(var i=0; i < teamArray.length; i++){
+let employee = teamArray[i];
+let role = employee.getRole();
+    if(role === "Manager"){
+        managerArray.push(employee);
+        console.log(managerArray);
+    } else if(role === "Intern"){
+        internArray.push(employee);
+        console.log(internArray);
+    } else {
+        engineerArray.push(employee);
+        console.log(engineerArray);
+    }
+}
+
+};
 
 function generateCardsSection (teamArray) {
   //where is role!?
 if (role === "Manager"){
-  teamArray.filter(({ role }) => !"Manager").map(({ name, id, email, office}) => {
+  teamArray.filter(({ Manager }) => !"Manager").map(({ name, id, email, office}) => {
           return `
               <div class="col-9-sm col-6-md col-lg-3 card shadow p-0 mb-5 bg-light rounded mx-4">
                   <div class="card-body px-0 py-0">
@@ -19,7 +44,7 @@ if (role === "Manager"){
                   </div>
               </div>
               `
-})
+}).join("");
 } else if (role === "Engineer"){
   teamArray.filter(({ role }) => !"Engineer").map(({ name, id, email, github}) => {
   return `
@@ -39,7 +64,8 @@ if (role === "Manager"){
            `
   }
 
-) } else {
+).join("");
+} else {
   teamArray.filter(({ role }) => !"Intern").map(({ name, id, email, school}) => {
   return `
   <div class="col-9-sm col-6-md col-lg-3 card shadow p-0 mb-5 bg-light rounded mx-4">
@@ -57,7 +83,8 @@ if (role === "Manager"){
    </div>
   `
   }
-)};
+).join("");
+};
 }
 
 function generateHTML(templateData) {
@@ -85,11 +112,13 @@ function generateHTML(templateData) {
 
     <main class="container mt-5">
         <div class="row justify-content-center">
-        ${generateCardsSection(teamArray)}
+        
         </div>
     </main>
     </html>
     `;
   };
 
-  module.exports= generateHTML;
+  module.exports= { generateHTML, filterRoles };
+
+  // ${generateCardsSection(templateData)}
