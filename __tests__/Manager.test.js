@@ -36,5 +36,5 @@ test("get's manager's office number and sets it as object's office", () => {
 test("get's manager's role and sets it as object's role", () => {
     const manager = new Manager("Dave");
     
-    expect(manager.getRole()).toHaveProperty("role");
+    expect(manager.getRole()).toEqual(expect.any(String));
 })

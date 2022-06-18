@@ -36,5 +36,5 @@ test("get's engineer's github username and sets it as object's github", () => {
 test("get's engineer's role and sets it as object's role", () => {
     const engineer = new Engineer("Dave");
     
-    expect(engineer.getRole()).toHaveProperty("role");
+    expect(engineer.getRole()).toEqual(expect.any(String));
 })

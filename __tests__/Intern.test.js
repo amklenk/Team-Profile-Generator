@@ -36,5 +36,5 @@ test("get's intern's school and sets it as object's school", () => {
 test("get's intern's role and sets it as object's role", () => {
     const intern = new Intern("Dave");
     
-    expect(intern.getRole()).toHaveProperty("role");
+    expect(intern.getRole()).toEqual(expect.any(String));
 })
