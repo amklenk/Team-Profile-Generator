@@ -13,81 +13,98 @@ let employee = teamArray[i];
 let role = employee.getRole();
     if(role === "Manager"){
         managerArray.push(employee);
-        console.log(managerArray);
     } else if(role === "Intern"){
         internArray.push(employee);
-        console.log(internArray);
     } else {
         engineerArray.push(employee);
-        console.log(engineerArray);
     }
 }
-return (managerArray, internArray, engineerArray);
-
+generateManagerCards(managerArray);
+generateInternCards(internArray);
+generateEngineerCards(engineerArray);
 };
-
-function generateCardsSection (managerArray, internArray, engineerArray) {
-  //where is role!?
-  console.log(managerArray);
-  console.log(internArray);
-  console.log(engineerArray);
-  for (var i = 0; i <managerArray.length; i++) {
-    return `
-              <div class="col-9-sm col-6-md col-lg-3 card shadow p-0 mb-5 bg-light rounded mx-4">
-                  <div class="card-body px-0 py-0">
-                      <div class="card-header header px-3">
-                          <h5 class="card-title font-weight-bold">${name}</h5>
-                          <h6 class="card-subtitle font-weight-bold"><span class = "icon mr-1"><i class="fa-solid fa-mug-hot"></i></span>Manager</h6>
-                      </div>
-                      <ul class="card-text list-group mt-2 px-3 py-3 list">
-                          <li id="ID list-group-item">ID: ${id}</li>
-                          <li id="email list-group-item">Email: <a href="mailto:${email}">${email}</a></li>
-                          <li id="extra-info list-group-item">Office: ${office}</li>
-                      </ul>
-                  </div>
-              </div>
-              `
-  }
-
-  for (var i = 0; i < internArray.length; i++){
-      return `
-  <div class="col-9-sm col-6-md col-lg-3 card shadow p-0 mb-5 bg-light rounded mx-4">
-       <div class="card-body px-0 py-0">
-           <div class="card-header header px-3">
-               <h5 class="card-title font-weight-bold">${name}</h5>
-               <h6 class="card-subtitle font-weight-bold"><span class = "icon mr-1"><i class="fa-solid fa-graduation-cap"></i></span>Intern</h6>
-           </div>
-           <ul class="card-text list-group mt-2 px-3 py-3 list">
-               <li id="ID list-group-item">ID: ${name}</li>
-               <li id="email list-group-item">Email: <a href="mailto:${email}">${email}</a></li>
-               <li id="extra-info list-group-item">School: ${school}</li>
-           </ul>
-       </div>
-   </div>
-  `
-  }
-
-  for(var i = 0; i < engineerArray.length; i++) {
-      return `
-           <div class="col-9-sm col-6-md col-lg-3 card shadow p-0 mb-5 bg-light rounded mx-4">
-                <div class="card-body px-0 py-0">
-                    <div class="card-header header px-3">
-                        <h5 class="card-title font-weight-bold">${name}</h5>
-                        <h6 class="card-subtitle font-weight-bold"><span class = "icon mr-1"><i class="fa-solid fa-glasses"></i></span>Engineer</h6>
-                    </div>
-                    <ul class="card-text list-group mt-2 px-3 py-3 list">
-                        <li id="ID list-group-item">ID: ${id}</li>
-                        <li id="email list-group-item">Email: <a href="mailto:${email}">${email}</a></li>
-                        <li id="extra-info list-group-item">GitHub: <a href="https://github.com/${github}" target="_blank">${github}</a></li>
-                    </ul>
-                </div>
-            </div>
-           `
-  }
+function generateManagerCards (managerArray){
+    for (var i = 0; i < managerArray.length; i++) {
+            console.log("Manager!");
+    }
 }
 
-function generateHTML() {
+function generateInternCards(internArray){
+    for (var i = 0; i < internArray.length; i++) {
+        console.log("Intern!");
+}
+}
 
+function generateEngineerCards(engineerArray){
+    for (var i = 0; i < engineerArray.length; i++) {
+        console.log("Engineer!");
+}
+}
+// function generateCardsSection (managerArray, internArray, engineerArray) {
+//   console.log(managerArray);
+//   console.log(internArray);
+//   console.log(engineerArray);
+//   for (var i = 0; i < managerArray.length; i++) {
+//     console.log("Manager!");
+//     return `
+//               <div class="col-9-sm col-6-md col-lg-3 card shadow p-0 mb-5 bg-light rounded mx-4">
+//                   <div class="card-body px-0 py-0">
+//                       <div class="card-header header px-3">
+//                           <h5 class="card-title font-weight-bold">${name}</h5>
+//                           <h6 class="card-subtitle font-weight-bold"><span class = "icon mr-1"><i class="fa-solid fa-mug-hot"></i></span>Manager</h6>
+//                       </div>
+//                       <ul class="card-text list-group mt-2 px-3 py-3 list">
+//                           <li id="ID list-group-item">ID: ${id}</li>
+//                           <li id="email list-group-item">Email: <a href="mailto:${email}">${email}</a></li>
+//                           <li id="extra-info list-group-item">Office: ${office}</li>
+//                       </ul>
+//                   </div>
+//               </div>
+//               `
+//   }
+
+//   for (var i = 0; i < internArray.length; i++){
+//     console.log("intern");
+//       return `
+//   <div class="col-9-sm col-6-md col-lg-3 card shadow p-0 mb-5 bg-light rounded mx-4">
+//        <div class="card-body px-0 py-0">
+//            <div class="card-header header px-3">
+//                <h5 class="card-title font-weight-bold">${name}</h5>
+//                <h6 class="card-subtitle font-weight-bold"><span class = "icon mr-1"><i class="fa-solid fa-graduation-cap"></i></span>Intern</h6>
+//            </div>
+//            <ul class="card-text list-group mt-2 px-3 py-3 list">
+//                <li id="ID list-group-item">ID: ${name}</li>
+//                <li id="email list-group-item">Email: <a href="mailto:${email}">${email}</a></li>
+//                <li id="extra-info list-group-item">School: ${school}</li>
+//            </ul>
+//        </div>
+//    </div>
+//   `
+//   }
+
+//   for(var i = 0; i < engineerArray.length; i++) {
+//     console.log("Engineer");
+//       return `
+//            <div class="col-9-sm col-6-md col-lg-3 card shadow p-0 mb-5 bg-light rounded mx-4">
+//                 <div class="card-body px-0 py-0">
+//                     <div class="card-header header px-3">
+//                         <h5 class="card-title font-weight-bold">${name}</h5>
+//                         <h6 class="card-subtitle font-weight-bold"><span class = "icon mr-1"><i class="fa-solid fa-glasses"></i></span>Engineer</h6>
+//                     </div>
+//                     <ul class="card-text list-group mt-2 px-3 py-3 list">
+//                         <li id="ID list-group-item">ID: ${id}</li>
+//                         <li id="email list-group-item">Email: <a href="mailto:${email}">${email}</a></li>
+//                         <li id="extra-info list-group-item">GitHub: <a href="https://github.com/${github}" target="_blank">${github}</a></li>
+//                     </ul>
+//                 </div>
+//             </div>
+//            `
+//   }
+// }
+
+function generateHTML(teamArray) {
+
+// const { manager, intern, engineer } = teamArray
     return `
 <!DOCTYPE html>
     <html lang="en">

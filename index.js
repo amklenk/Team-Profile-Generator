@@ -1,10 +1,10 @@
 // am I going to run inquirer here? Or Should this be mostly empty calling on another page's functionality?
 const inquirer = require("inquirer");
-const fs = require("fs");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const {generateHTML, filterRoles} = require("./src/page-template");
+const {writeFile, copyFile} = require("./utils/generatepage");
 
 //questions arrays
 const managerQuestions = [
@@ -201,8 +201,8 @@ inquirer.prompt(
     this.promptIntern();
   }  else {
     filterRoles(this.team);
-    // writeFile(generateHTML(templateData));
-    // copyFile();
+    // writeFile();
+    copyFile();
   }
 })
 .catch((err) => {
@@ -215,7 +215,6 @@ myTeam.prototype.promptEngineer = function(){
   .then(({name, id, email, github}) => {
     this.engineer = new Engineer(name, id, email, github);
     this.team.push(this.engineer);
-    console.log(this.team);
     this.promptTeamMember();
   })
 };
@@ -231,40 +230,3 @@ myTeam.prototype.promptIntern = function() {
 }
 
 new myTeam().promptManager();
-
-const writeFile = pageHTML => {
-  return new Promise((resolve, reject) => {
-      fs.writeFile('./dist/index.html', pageHTML, err=>{
-          //if there's an error, reject the Promise and send the error to the catch method
-          if (err){
-              reject(err);
-              return;
-          }
-          //if resolves, send successful data to then method
-          resolve({
-              ok: true,
-              message:"File created!"
-          });
-      });
-  });
-};
-
-const copyFile=()=>{
-  return new Promise((resolve, reject)=>{
-      fs.copyFile('./src/styles.css', './dist/styles.css', err => {
-          //if there's an error, reject the Promise and send the error to the catch method
-          if (err){
-              reject(err);
-              return;
-          }
-          //if resolves, send successful data to then method
-          resolve({
-              ok: true,
-              message:"Stylesheet created!"
-          });
-      });
-  });
-};
-
-
-
