@@ -13,7 +13,7 @@ if (role === "Manager"){
                       </div>
                       <ul class="card-text list-group mt-2 px-3 py-3 list">
                           <li id="ID list-group-item">ID: ${id}</li>
-                          <li id="email list-group-item">Email: ${email}</li>
+                          <li id="email list-group-item">Email: <a href="mailto:${email}">${email}</a></li>
                           <li id="extra-info list-group-item">Office: ${office}</li>
                       </ul>
                   </div>
@@ -31,8 +31,8 @@ if (role === "Manager"){
                     </div>
                     <ul class="card-text list-group mt-2 px-3 py-3 list">
                         <li id="ID list-group-item">ID: ${id}</li>
-                        <li id="email list-group-item">Email: ${email}</li>
-                        <li id="extra-info list-group-item">GitHub: ${github}</li>
+                        <li id="email list-group-item">Email: <a href="mailto:${email}">${email}</a></li>
+                        <li id="extra-info list-group-item">GitHub: <a href="https://github.com/${github}" target="_blank">${github}</a></li>
                     </ul>
                 </div>
             </div>
@@ -50,7 +50,7 @@ if (role === "Manager"){
            </div>
            <ul class="card-text list-group mt-2 px-3 py-3 list">
                <li id="ID list-group-item">ID: ${name}</li>
-               <li id="email list-group-item">Email: ${email}</li>
+               <li id="email list-group-item">Email: <a href="mailto:${email}">${email}</a></li>
                <li id="extra-info list-group-item">School: ${school}</li>
            </ul>
        </div>
