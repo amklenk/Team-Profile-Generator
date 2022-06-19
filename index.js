@@ -3,7 +3,7 @@ const inquirer = require("inquirer");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
-const {generateHTML, filterRoles} = require("./src/page-template");
+const generateHTML = require("./src/page-template");
 const {writeFile, copyFile} = require("./utils/generatepage");
 
 //questions arrays
@@ -200,8 +200,8 @@ inquirer.prompt(
   } else if (member === "Intern"){
     this.promptIntern();
   }  else {
-    filterRoles(this.team);
-    // writeFile();
+    generateHTML(this.team);
+    writeFile(pageHTML);
     copyFile();
   }
 })
