@@ -1,34 +1,62 @@
 # Team-Profile-Generator
 
-## 
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-AS A manager
-I WANT to generate a webpage that displays my team's basic info
-SO THAT I have quick access to their emails and GitHub profiles
+## Description
+The Team Profile Generator was created to display a team's basic info for a manager so that they have quick access to the employees' emails and GitHub profilies.
 
-GIVEN a command-line application that accepts user input
-WHEN I am prompted for my team members and their information
-THEN an HTML file is generated that displays a nicely formatted team roster based on user input
-WHEN I click on an email address in the HTML
-THEN my default email program opens and populates the TO field of the email with the address
-WHEN I click on the GitHub username
-THEN that GitHub profile opens in a new tab
-WHEN I start the application
-THEN I am prompted to enter the team manager’s name, employee ID, email address, and office number
-WHEN I enter the team manager’s name, employee ID, email address, and office number
-THEN I am presented with a menu with the option to add an engineer or an intern or to finish building my team
-WHEN I select the engineer option
-THEN I am prompted to enter the engineer’s name, ID, email, and GitHub username, and I am taken back to the menu
-WHEN I select the intern option
-THEN I am prompted to enter the intern’s name, ID, email, and school, and I am taken back to the menu
-WHEN I decide to finish building my team
-THEN I exit the application, and the HTML is generated
+The following were the requirements of the project:
+- When the user is prompted to enter their team members and their information via the command line, an HTML file is generated that displays a nicely formatted team roster based on user input.
+- When the user clicks on the email address in the HTML, their default email program opens and populates the TO field of the email with the address.
+- When the user clicks on the GitHub username, the employee's GitHub profile opens in a new tab.
+- When the user starts the application, they are prompted to enter their name, employee ID, email address, and office number as the team manager.
+- When the user is presented with a menu with the option to add an engineer or an intern or to finish building my team, when selecting the engineer option, the user is prompted to enter the engineer’s name, ID, email, and GitHub username, and they are taken back to the menu.
+- When the user is presented with a menu with the option to add an engineer or an intern or to finish building my team, when selecting the intern option, the user is prompted to enter the intern’s name, ID, email, and school, and they are taken back to the menu.
+- When the user decides to finish building their team, they will exit the applicatino and their HTML is generated.
 
-- Start with writing Employee's tests and then passing code
-- from there write test for each, extended functionality occurs in the js file with extends and super (is this right?)
-- Write the passing code, extending overlap, writing the rest
-- Then start with the inquirer.js prompts with promise chains depending on the choices that include the passing functionality
-- Create the html template and CSS styling sheet.
-- Then set up the writeToFile (HTML), copyToFile (CSS), and generate functionality
-- Output goes in the dist file (new HTML and repeated CSS)
+## Table of Contents
+- [Installation](#installation)
+- [Links](#links)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+- [How to Contribute](#how-to-contribute)
+- [Questions](#questions)
 
+## Installation
+Visit the GitHub repository, Team-Profile-Generator (see the link below), to fork and clone the repository. The JSON file will have the necessary dependencies. Use:
+````````````
+npm install
+````````````
+The .gitignore file is set up in the root directory along with the index.js file that contains most of the command line code. The utils folder contains the generatepage file, which contains the fs functions that write the HTML file and copy the CSS file and the module.export to index.js. The src folder will contain the page-template file, which contains the template for the HTML file and the module.export to index.js, and the CSS styles sheet that will be copied to the dist folder. the The dist folder will contain the generated HTML index.html and the copied styles.css.
+
+## Links
+- [GitHub Repository](https://github.com/amklenk/Team-Portfolio-Generator)
+- [Walthrough Video Link]()
+
+## Usage
+The following images are project screenshots.
+
+CLI App
+![CLI image]()
+
+Example of a Generated HTML File
+![Example README]()
+
+Screenshot of the HTML File Opened in the Browser
+![Example Preview]()
+
+The application is navigable via opening the index.js file in an integrated terminal. All of the user data is entered using Inquirer prompts. The generated files will appear in the dist folder.
+
+## Credits
+
+
+## License
+The badge at the top of the page shows that this project is licensed under MIT. The link for that license is shown below.
+- [License: MIT](https://opensource.org/licenses/MIT)
+## How to Contribute
+Please fork and clone the repository and use a pull request to add or make changes to the current repository.
+
+## Questions
+Please direct any questions to amandamklenk3@gmail.com. To see more projects, visit the link below for amklenk's respository: 
+- [GitHub Repository](https://github.com/amklenk)
