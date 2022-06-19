@@ -162,7 +162,7 @@ function generateHTML(teamArray) {
                 <ul class="card-text list-group mt-2 px-3 py-3 list">
                     <li id="ID list-group-item">ID: ${employee.id}</li>
                     <li id="email list-group-item">Email: <a href="mailto:${employee.email}">${employee.email}</a></li>
-                    <li id="extra-info list-group-item">GitHub: <a href="https://github.com/${employee.github}" target="_blank">${github}</a></li>
+                    <li id="extra-info list-group-item">GitHub: <a href="https://github.com/${employee.github}" target="_blank">${employee.github}</a></li>
                 </ul>
             </div>
         </div>`
