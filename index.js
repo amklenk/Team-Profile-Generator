@@ -1,4 +1,4 @@
-// am I going to run inquirer here? Or Should this be mostly empty calling on another page's functionality?
+// requires
 const inquirer = require("inquirer");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
@@ -204,6 +204,7 @@ inquirer.prompt(
     writeFile(generateHTML(this.team));
     //copies CSS to go into dist
     copyFile();
+    console.log("Your files are ready in the dist folder!");
   }
 })
 .catch((err) => {

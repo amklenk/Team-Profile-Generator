@@ -3,16 +3,16 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## Description
-The Team Profile Generator was created to display a team's basic info for a manager so that they have quick access to the employees' emails and GitHub profilies.
+The Team Profile Generator was created to display a team's basic information for a manager so that they have quick access to the employees' id numbers, email addresses, and GitHub profiles.
 
 The following were the requirements of the project:
-- When the user is prompted to enter their team members and their information via the command line, an HTML file is generated that displays a nicely formatted team roster based on user input.
+- When the user is prompted to enter their team members' information and their information via the command line, an HTML file is generated that displays a nicely formatted team roster based on user input.
 - When the user clicks on the email address in the HTML, their default email program opens and populates the TO field of the email with the address.
 - When the user clicks on the GitHub username, the employee's GitHub profile opens in a new tab.
 - When the user starts the application, they are prompted to enter their name, employee ID, email address, and office number as the team manager.
 - When the user is presented with a menu with the option to add an engineer or an intern or to finish building my team, when selecting the engineer option, the user is prompted to enter the engineer’s name, ID, email, and GitHub username, and they are taken back to the menu.
 - When the user is presented with a menu with the option to add an engineer or an intern or to finish building my team, when selecting the intern option, the user is prompted to enter the intern’s name, ID, email, and school, and they are taken back to the menu.
-- When the user decides to finish building their team, they will exit the applicatino and their HTML is generated.
+- When the user decides to finish building their team, they will exit the application and their HTML is generated.
 
 ## Table of Contents
 - [Installation](#installation)
@@ -31,19 +31,19 @@ The .gitignore file is set up in the root directory along with the index.js file
 
 ## Links
 - [GitHub Repository](https://github.com/amklenk/Team-Portfolio-Generator)
-- [Walthrough Video Link]()
+- [Walthrough Video Link](https://drive.google.com/file/d/1Fj4wTc_1ZEU2ECtfpXfdbUQ0fyzAE-wy/view)
 
 ## Usage
 The following images are project screenshots.
 
 CLI App
-![CLI image]()
+![CLI image](./images/commandline.png)
 
 Example of a Generated HTML File
-![Example README]()
+![Example HTML File](./images/HTML.png)
 
 Screenshot of the HTML File Opened in the Browser
-![Example Preview]()
+![Example Deployed HTML](./images/site.png)
 
 The application is navigable via opening the index.js file in an integrated terminal. All of the user data is entered using Inquirer prompts. The generated files will appear in the dist folder.
 
