@@ -200,8 +200,9 @@ inquirer.prompt(
   } else if (member === "Intern"){
     this.promptIntern();
   }  else {
-    generateHTML(this.team);
-    writeFile(pageHTML);
+    //pass the generateHTML data through writeFile to generate the page
+    writeFile(generateHTML(this.team));
+    //copies CSS to go into dist
     copyFile();
   }
 })
@@ -230,3 +231,23 @@ myTeam.prototype.promptIntern = function() {
 }
 
 new myTeam().promptManager();
+// .then(this.promptTeamMember)
+//   //generates page using the generatePage function
+// .then(
+//     generatePage(this.team)
+//   )
+//   //writes the file to the file system
+// .then(pageHTML => {
+//     return writeFile(pageHTML);
+//   })
+//   //copies the CSS
+// .then(
+//     copyFile()
+// )
+// .then(
+//     console.log("Your files are ready in the dist folder!")
+//   )
+// .catch(err => {
+//     console.log(err);
+//   });
+

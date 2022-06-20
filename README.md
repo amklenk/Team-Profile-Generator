@@ -18,7 +18,6 @@ The following were the requirements of the project:
 - [Installation](#installation)
 - [Links](#links)
 - [Usage](#usage)
-- [Credits](#credits)
 - [License](#license)
 - [How to Contribute](#how-to-contribute)
 - [Questions](#questions)
@@ -28,7 +27,7 @@ Visit the GitHub repository, Team-Profile-Generator (see the link below), to for
 ````````````
 npm install
 ````````````
-The .gitignore file is set up in the root directory along with the index.js file that contains most of the command line code. The utils folder contains the generatepage file, which contains the fs functions that write the HTML file and copy the CSS file and the module.export to index.js. The src folder will contain the page-template file, which contains the template for the HTML file and the module.export to index.js, and the CSS styles sheet that will be copied to the dist folder. the The dist folder will contain the generated HTML index.html and the copied styles.css.
+The .gitignore file is set up in the root directory along with the index.js file that contains most of the command line code. The utils folder contains the generatepage file, which contains the fs functions that write the HTML file and copy the CSS file and the module.export to index.js. The src folder will contain the page-template file, which contains the template for the HTML file and the module.export to index.js, and the CSS styles sheet that will be copied to the dist folder. The dist folder will contain the generated HTML index.html and the copied styles.css.
 
 ## Links
 - [GitHub Repository](https://github.com/amklenk/Team-Portfolio-Generator)
@@ -47,9 +46,6 @@ Screenshot of the HTML File Opened in the Browser
 ![Example Preview]()
 
 The application is navigable via opening the index.js file in an integrated terminal. All of the user data is entered using Inquirer prompts. The generated files will appear in the dist folder.
-
-## Credits
-
 
 ## License
 The badge at the top of the page shows that this project is licensed under MIT. The link for that license is shown below.

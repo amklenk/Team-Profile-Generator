@@ -1,4 +1,5 @@
 const fs = require("fs");
+const generateHTML = require("../utils/generatepage");
 
 const writeFile = pageHTML => {
     return new Promise((resolve, reject) => {
