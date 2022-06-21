@@ -30,7 +30,7 @@ npm install
 The .gitignore file is set up in the root directory along with the index.js file that contains most of the command line code. The utils folder contains the generatepage file, which contains the fs functions that write the HTML file and copy the CSS file and the module.export to index.js. The src folder will contain the page-template file, which contains the template for the HTML file and the module.export to index.js, and the CSS styles sheet that will be copied to the dist folder. The dist folder will contain the generated HTML index.html and the copied styles.css.
 
 ## Links
-- [GitHub Repository](https://github.com/amklenk/Team-Portfolio-Generator)
+- [GitHub Repository](https://github.com/amklenk/Team-Profile-Generator)
 - [Walkthrough Video Link](https://drive.google.com/file/d/1Fj4wTc_1ZEU2ECtfpXfdbUQ0fyzAE-wy/view?usp=sharing)
 
 ## Usage
