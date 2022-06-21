@@ -31,7 +31,7 @@ The .gitignore file is set up in the root directory along with the index.js file
 
 ## Links
 - [GitHub Repository](https://github.com/amklenk/Team-Portfolio-Generator)
-- [Walthrough Video Link](https://drive.google.com/file/d/1Fj4wTc_1ZEU2ECtfpXfdbUQ0fyzAE-wy/view)
+- [Walthrough Video Link](https://drive.google.com/file/d/1Fj4wTc_1ZEU2ECtfpXfdbUQ0fyzAE-wy/view?usp=sharing)
 
 ## Usage
 The following images are project screenshots.
